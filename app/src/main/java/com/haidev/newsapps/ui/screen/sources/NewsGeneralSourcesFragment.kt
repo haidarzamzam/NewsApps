@@ -29,14 +29,14 @@ class NewsGeneralSourcesFragment :
         _binding = getViewDataBinding()
         binding?.lifecycleOwner = this
         newsSourcesViewModel.navigator = this
-        initListMovieAdapter()
+        initItemNewsSourcesAdapter()
     }
 
     override fun setLayout() = R.layout.fragment_news_general_sources
 
     override fun getViewModels() = newsSourcesViewModel
 
-    private fun initListMovieAdapter() {
+    private fun initItemNewsSourcesAdapter() {
         binding?.rvNewsSources?.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
@@ -48,7 +48,7 @@ class NewsGeneralSourcesFragment :
     }
 
     override fun onReadyAction() {
-        initListMovieAdapter()
+        initItemNewsSourcesAdapter()
         newsSourcesViewModel.getNewsSourcesAsync("general")
     }
 
@@ -83,11 +83,6 @@ class NewsGeneralSourcesFragment :
                 skeletonNewsSources?.showOriginal()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun navigateToDetailSources(data: NewsSourcesModel.Response.Source) {

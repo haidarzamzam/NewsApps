@@ -82,5 +82,6 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<out Any>> :
     override fun onDestroyView() {
         super.onDestroyView()
         onFragmentDestroyed()
+        binding?.unbind()
     }
 }

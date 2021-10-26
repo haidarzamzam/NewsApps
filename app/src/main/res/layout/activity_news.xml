@@ -22,7 +22,8 @@
                 app:elevation="0dp"
                 app:layout_collapseMode="pin"
                 app:layout_scrollFlags="scroll|enterAlways"
-                app:title="@string/app_name" />
+                app:title="@string/app_name"
+                app:titleTextColor="@color/colorPrimary" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"
