@@ -11,5 +11,5 @@ interface ApiService {
         @Query("category") category: String?,
         @Query("language") language: String?,
         @Query("apiKey") api_key: String?
-    ): Deferred<List<NewsSourcesModel.Response>>
+    ): Deferred<NewsSourcesModel.Response>
 }
