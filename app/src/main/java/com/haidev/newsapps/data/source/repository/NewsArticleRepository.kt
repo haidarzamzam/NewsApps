@@ -10,9 +10,8 @@ class NewsArticleRepository(
     suspend fun getNewsArticle(
         sources: String,
         query: String,
-        page: Int
     ): NewsArticleModel.Response {
-        return apiService.getNewsArticle(sources, "en", BuildConfig.API_KEY, query, 10, page)
+        return apiService.getNewsArticle(sources, "en", BuildConfig.API_KEY, query)
             .await()
     }
 

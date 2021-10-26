@@ -19,11 +19,11 @@ class NewsArticleViewModel(
     val newsArticle: MutableLiveData<Resource<NewsArticleModel.Response>>
         get() = _newsArticle
 
-    fun getNewsArticleAsync(sources: String, query: String, page: Int) {
+    fun getNewsArticleAsync(sources: String, query: String) {
         viewModelScope.launch {
             _newsArticle.postValue(Resource.loading(null))
             try {
-                val response = repository.getNewsArticle(sources, query, page)
+                val response = repository.getNewsArticle(sources, query)
                 _newsArticle.postValue(Resource.success(response))
             } catch (t: Throwable) {
                 _newsArticle.postValue(

@@ -77,16 +77,17 @@ class NewsArticleActivity :
         initListAdapter()
         if (queryNewsSearch == "") {
             newsSource.name?.let { supportActionBar?.title = it }
-            newsSource.id?.let { newsArticleViewModel.getNewsArticleAsync(it, "", 1) }
+            newsSource.id?.let { newsArticleViewModel.getNewsArticleAsync(it, "") }
         } else {
             supportActionBar?.title = "Search : $queryNewsSearch"
-            queryNewsSearch.let { newsArticleViewModel.getNewsArticleAsync("", it, 1) }
+            queryNewsSearch.let { newsArticleViewModel.getNewsArticleAsync("", it) }
         }
     }
 
     private fun initListAdapter() {
         binding?.rvArticle?.apply {
-            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            val staggered = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            layoutManager = staggered
             setHasFixedSize(true)
             newsArticleListAdapter = ItemNewsArticleAdapter {
                 navigateToDetailArticle(it)
