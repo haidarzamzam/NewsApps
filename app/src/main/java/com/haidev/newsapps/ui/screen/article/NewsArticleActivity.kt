@@ -1,8 +1,11 @@
 package com.haidev.newsapps.ui.screen.article
 
+import android.graphics.BlendMode
+import android.graphics.BlendModeColorFilter
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.faltenreich.skeletonlayout.Skeleton
 import com.faltenreich.skeletonlayout.applySkeleton
 import com.haidev.newsapps.R
@@ -40,7 +43,18 @@ class NewsArticleActivity :
             intent?.getParcelableExtra<NewsSourcesModel.Response.Source>(
                 EXTRA_SOURCE
             ) as NewsSourcesModel.Response.Source
-        binding?.toolbar?.title = newsSource.name
+        setSupportActionBar(binding?.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = newsSource.name
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            binding?.toolbar?.navigationIcon?.colorFilter =
+                BlendModeColorFilter(getColor(R.color.colorPrimary), BlendMode.SRC_ATOP)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun setLayout() = R.layout.activity_news_article
@@ -49,12 +63,12 @@ class NewsArticleActivity :
 
     override fun onReadyAction() {
         initListAdapter()
-        newsArticleViewModel.getNewsArticleAsync(newsSource.id)
+        newsSource.id?.let { newsArticleViewModel.getNewsArticleAsync(it) }
     }
 
     private fun initListAdapter() {
         binding?.rvArticle?.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             setHasFixedSize(true)
             newsArticleListAdapter = ItemNewsArticleAdapter {
                 navigateToDetailArticle(it)
@@ -62,7 +76,7 @@ class NewsArticleActivity :
             adapter = newsArticleListAdapter
         }
         skeletonNewsArticle =
-            binding?.rvArticle?.applySkeleton(R.layout.item_news_article_row, 8)
+            binding?.rvArticle?.applySkeleton(R.layout.item_skeleton_news_article_row, 8)
     }
 
     override fun onObserveAction() {
