@@ -18,6 +18,9 @@ interface ApiService {
     fun getNewsArticle(
         @Query("sources") category: String?,
         @Query("language") language: String?,
-        @Query("apiKey") api_key: String?
+        @Query("apiKey") api_key: String?,
+        @Query("q") q: String?,
+        @Query("pageSize") pageSize: Int?,
+        @Query("page") page: Int?,
     ): Deferred<NewsArticleModel.Response>
 }

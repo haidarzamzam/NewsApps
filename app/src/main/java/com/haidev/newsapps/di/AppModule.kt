@@ -3,7 +3,6 @@ package com.haidev.newsapps.di
 import com.haidev.newsapps.data.source.repository.NewsArticleRepository
 import com.haidev.newsapps.data.source.repository.NewsSourcesRepository
 import com.haidev.newsapps.ui.screen.article.NewsArticleViewModel
-import com.haidev.newsapps.ui.screen.search.SearchNewsViewModel
 import com.haidev.newsapps.ui.screen.sources.NewsSourcesViewModel
 import com.haidev.newsapps.ui.screen.splash.SplashViewModel
 import com.haidev.newsapps.util.ContextProviders
@@ -15,7 +14,6 @@ val viewModelModule = module {
     viewModel { SplashViewModel(androidApplication()) }
     viewModel { NewsSourcesViewModel(get(), androidApplication()) }
     viewModel { NewsArticleViewModel(get(), androidApplication()) }
-    viewModel { SearchNewsViewModel(get(), get(), androidApplication()) }
 }
 
 val apiRepositoryModule = module {

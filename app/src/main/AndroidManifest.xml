@@ -11,9 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsApps">
         <activity
-            android:name=".ui.screen.search.SearchNewsActivity"
-            android:exported="true" />
-        <activity
             android:name=".ui.screen.article.DetailNewsArticleActivity"
             android:exported="true" />
         <activity

@@ -10,7 +10,7 @@ import com.haidev.newsapps.R
 import com.haidev.newsapps.data.model.NewsSourcesModel
 import com.haidev.newsapps.databinding.ActivityNewsSourcesBinding
 import com.haidev.newsapps.ui.base.BaseActivity
-import com.haidev.newsapps.ui.screen.search.SearchNewsActivity
+import com.haidev.newsapps.ui.screen.article.NewsArticleActivity
 import com.haidev.newsapps.ui.screen.sources.adapter.NewsSourcesPagerAdapter
 import com.haidev.newsapps.util.Util
 import com.haidev.newsapps.util.hideKeyboard
@@ -75,8 +75,8 @@ class NewsSourcesActivity : BaseActivity<ActivityNewsSourcesBinding, NewsSources
     }
 
     override fun navigateToSearch(query: String) {
-        val intent = Intent(this, SearchNewsActivity::class.java)
-        intent.putExtra(SearchNewsActivity.EXTRA_QUERY, query)
+        val intent = Intent(this, NewsArticleActivity::class.java)
+        intent.putExtra(NewsArticleActivity.EXTRA_QUERY, query)
         startActivity(intent)
     }
 }

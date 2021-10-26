@@ -28,6 +28,7 @@ class NewsArticleActivity :
     private val newsArticleViewModel: NewsArticleViewModel by viewModel()
     private var _binding: ActivityNewsArticleBinding? = null
     private val binding get() = _binding
+    private var queryNewsSearch: String = ""
     private lateinit var newsSource: NewsSourcesModel.Response.Source
     private lateinit var newsArticleListAdapter: ItemNewsArticleAdapter
     private var skeletonNewsArticle: Skeleton? = null
@@ -41,13 +42,22 @@ class NewsArticleActivity :
     }
 
     private fun initView() {
-        newsSource =
-            intent?.getParcelableExtra<NewsSourcesModel.Response.Source>(
+        if (intent?.getStringExtra(EXTRA_QUERY) != null) {
+            queryNewsSearch = intent?.getStringExtra(EXTRA_QUERY) as String
+        }
+        if (intent?.getParcelableExtra<NewsSourcesModel.Response.Source>(
                 EXTRA_SOURCE
-            ) as NewsSourcesModel.Response.Source
+            ) != null
+        ) {
+            newsSource =
+                intent?.getParcelableExtra<NewsSourcesModel.Response.Source>(
+                    EXTRA_SOURCE
+                ) as NewsSourcesModel.Response.Source
+        }
+
         setSupportActionBar(binding?.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = newsSource.name
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             binding?.toolbar?.navigationIcon?.colorFilter =
                 BlendModeColorFilter(getColor(R.color.colorPrimary), BlendMode.SRC_ATOP)
@@ -65,7 +75,13 @@ class NewsArticleActivity :
 
     override fun onReadyAction() {
         initListAdapter()
-        newsSource.id?.let { newsArticleViewModel.getNewsArticleAsync(it) }
+        if (queryNewsSearch == "") {
+            newsSource.name?.let { supportActionBar?.title = it }
+            newsSource.id?.let { newsArticleViewModel.getNewsArticleAsync(it, "", 1) }
+        } else {
+            supportActionBar?.title = "Search : $queryNewsSearch"
+            queryNewsSearch.let { newsArticleViewModel.getNewsArticleAsync("", it, 1) }
+        }
     }
 
     private fun initListAdapter() {
@@ -121,5 +137,6 @@ class NewsArticleActivity :
 
     companion object {
         const val EXTRA_SOURCE = "ExtraSource"
+        const val EXTRA_QUERY = "ExtraQuery"
     }
 }
