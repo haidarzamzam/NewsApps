@@ -5,11 +5,16 @@
       <map>
         <entry key="app/src/main/res/drawable/chip_outline.xml" value="0.11851851851851852" />
         <entry key="app/src/main/res/drawable/chip_outline_selected.xml" value="0.11851851851851852" />
+        <entry key="app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.1111111111111111" />
+        <entry key="app/src/main/res/drawable/progressbar_green.xml" value="0.1111111111111111" />
+        <entry key="app/src/main/res/drawable/search_menu.xml" value="0.1111111111111111" />
         <entry key="app/src/main/res/drawable/selector_tab.xml" value="0.11851851851851852" />
+        <entry key="app/src/main/res/layout/activity_detail_news_article.xml" value="0.18055555555555555" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22314814814814815" />
         <entry key="app/src/main/res/layout/activity_news.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_news_article.xml" value="0.14074074074074075" />
         <entry key="app/src/main/res/layout/activity_news_sources.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/layout/activity_search_news.xml" value="0.18055555555555555" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.16111111111111112" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.10208999119930096" />
         <entry key="app/src/main/res/layout/fragment_news_business_sources.xml" value="0.22813688212927757" />
@@ -20,6 +25,8 @@
         <entry key="app/src/main/res/layout/fragment_news_science_sources.xml" value="0.17135416666666667" />
         <entry key="app/src/main/res/layout/fragment_news_sports_sources.xml" value="0.18541666666666667" />
         <entry key="app/src/main/res/layout/fragment_news_technology_sources.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/fragment_search_news_article.xml" value="0.18055555555555555" />
+        <entry key="app/src/main/res/layout/fragment_search_news_sources.xml" value="0.17135416666666667" />
         <entry key="app/src/main/res/layout/item_news_article_row.xml" value="0.18541666666666667" />
         <entry key="app/src/main/res/layout/item_news_sources_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_skeleton_news_article_row.xml" value="0.18541666666666667" />

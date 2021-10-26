@@ -1,3 +1,9 @@
 package com.haidev.newsapps.ui.screen.sources
 
-interface NewsSourcesNavigator
+import com.haidev.newsapps.data.model.NewsSourcesModel
+
+interface NewsSourcesNavigator {
+    fun navigateToDetailSources(data: NewsSourcesModel.Response.Source)
+
+    fun navigateToSearch(query: String)
+}

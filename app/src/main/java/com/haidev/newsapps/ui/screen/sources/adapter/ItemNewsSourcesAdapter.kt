@@ -1,4 +1,4 @@
-package com.haidev.newsapps.ui.screen.sources.tab
+package com.haidev.newsapps.ui.screen.sources.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

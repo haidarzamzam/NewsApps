@@ -11,6 +11,9 @@ import com.haidev.newsapps.data.model.Resource
 import com.haidev.newsapps.databinding.FragmentNewsSportsSourcesBinding
 import com.haidev.newsapps.ui.base.BaseFragment
 import com.haidev.newsapps.ui.screen.article.NewsArticleActivity
+import com.haidev.newsapps.ui.screen.sources.NewsSourcesNavigator
+import com.haidev.newsapps.ui.screen.sources.NewsSourcesViewModel
+import com.haidev.newsapps.ui.screen.sources.adapter.ItemNewsSourcesAdapter
 import com.haidev.newsapps.util.Status
 import com.haidev.newsapps.util.invisible
 import com.haidev.newsapps.util.observeFragment
@@ -93,5 +96,9 @@ class NewsSportsSourcesFragment :
         val intent = Intent(activity?.applicationContext, NewsArticleActivity::class.java)
         intent.putExtra(NewsArticleActivity.EXTRA_SOURCE, data)
         activity?.startActivity(intent)
+    }
+
+    override fun navigateToSearch(query: String) {
+
     }
 }

@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.haidev.newsapps.R
 import com.haidev.newsapps.ui.screen.sources.tab.*
 
-class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
+class NewsSourcesPagerAdapter(private val mContext: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     override fun getItem(position: Int): Fragment =

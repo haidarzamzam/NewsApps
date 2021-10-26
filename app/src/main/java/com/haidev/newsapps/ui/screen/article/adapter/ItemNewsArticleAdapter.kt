@@ -1,4 +1,4 @@
-package com.haidev.newsapps.ui.screen.article
+package com.haidev.newsapps.ui.screen.article.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

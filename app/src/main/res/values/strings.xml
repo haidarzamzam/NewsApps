@@ -8,4 +8,6 @@
     <string name="text_sources_health">Health</string>
     <string name="text_sources_sports">Sports</string>
     <string name="text_sources_science">Science</string>
+    <string name="text_search_sources">Sources</string>
+    <string name="text_search_articles">Article</string>
 </resources>

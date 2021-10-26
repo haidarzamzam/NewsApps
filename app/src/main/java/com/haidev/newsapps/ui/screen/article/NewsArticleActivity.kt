@@ -15,6 +15,7 @@ import com.haidev.newsapps.data.model.NewsSourcesModel
 import com.haidev.newsapps.data.model.Resource
 import com.haidev.newsapps.databinding.ActivityNewsArticleBinding
 import com.haidev.newsapps.ui.base.BaseActivity
+import com.haidev.newsapps.ui.screen.article.adapter.ItemNewsArticleAdapter
 import com.haidev.newsapps.util.Status
 import com.haidev.newsapps.util.invisible
 import com.haidev.newsapps.util.observeActivity
