@@ -1,5 +1,6 @@
 package com.haidev.newsapps.ui.screen.sources.tab
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.faltenreich.skeletonlayout.Skeleton
@@ -9,6 +10,7 @@ import com.haidev.newsapps.data.model.NewsSourcesModel
 import com.haidev.newsapps.data.model.Resource
 import com.haidev.newsapps.databinding.FragmentNewsBusinessSourcesBinding
 import com.haidev.newsapps.ui.base.BaseFragment
+import com.haidev.newsapps.ui.screen.article.NewsArticleActivity
 import com.haidev.newsapps.util.Status
 import com.haidev.newsapps.util.invisible
 import com.haidev.newsapps.util.observeFragment
@@ -88,6 +90,8 @@ class NewsBusinessSourcesFragment :
     }
 
     override fun navigateToDetailSources(data: NewsSourcesModel.Response.Source) {
-
+        val intent = Intent(activity?.applicationContext, NewsArticleActivity::class.java)
+        intent.putExtra(NewsArticleActivity.EXTRA_SOURCE, data)
+        activity?.startActivity(intent)
     }
 }

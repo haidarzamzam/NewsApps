@@ -15,7 +15,7 @@
             app:elevation="0dp">
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolBar"
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@android:color/white"
@@ -26,7 +26,7 @@
                 app:titleTextColor="@color/colorPrimary" />
 
             <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout"
+                android:id="@+id/tab_layout"
                 style="@style/ChipTabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"

@@ -1,5 +1,6 @@
 package com.haidev.newsapps.ui.screen.article
 
+import android.content.Intent
 import android.graphics.BlendMode
 import android.graphics.BlendModeColorFilter
 import android.os.Build
@@ -112,7 +113,9 @@ class NewsArticleActivity :
     }
 
     override fun navigateToDetailArticle(data: NewsArticleModel.Response.Article) {
-
+        val intent = Intent(this, DetailNewsArticleActivity::class.java)
+        intent.putExtra(DetailNewsArticleActivity.EXTRA_ARTICLE, data)
+        startActivity(intent)
     }
 
     companion object {
