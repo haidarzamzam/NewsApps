@@ -28,11 +28,8 @@ This application is an application to view news. and the feature is :
 
 ## 🎨 Screenshot
 
-| ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-1.png?raw=true)
-| ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-2.png?raw=true)
-| ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-3.png?raw=true) |
-| ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-4.png?raw=true)
-| ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-5.png?raw=true)
-| ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-6.png?raw=true) |
+| ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-1.png?raw=true) | ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-2.png?raw=true) | ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-3.png?raw=true) |
+| :---: | :---: | :---: |
+| ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-4.png?raw=true) | ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-5.png?raw=true) | ![](https://github.com/haidarzamzam/NewsApps/blob/master/screenshot/news-app-6.png?raw=true) |
 
 Thank you, cheers 🥂.
