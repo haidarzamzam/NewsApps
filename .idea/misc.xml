@@ -3,11 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/chip_outline.xml" value="0.11851851851851852" />
+        <entry key="app/src/main/res/drawable/chip_outline_selected.xml" value="0.11851851851851852" />
+        <entry key="app/src/main/res/drawable/selector_tab.xml" value="0.11851851851851852" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22314814814814815" />
+        <entry key="app/src/main/res/layout/activity_news.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.16111111111111112" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.10208999119930096" />
+        <entry key="app/src/main/res/layout/fragment_news_business_sources.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/fragment_news_entertainment.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/fragment_news_entertainment_sources.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/fragment_news_general_sources.xml" value="0.13333333333333333" />
+        <entry key="app/src/main/res/layout/fragment_news_health_sources.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/fragment_news_science_sources.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/fragment_news_sports_sources.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/layout/fragment_news_technology_sources.xml" value="0.17135416666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
