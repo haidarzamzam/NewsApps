@@ -1,4 +1,4 @@
-package com.haidev.newsapps.ui.screen.news.adapter
+package com.haidev.newsapps.ui.screen.sources.adapter
 
 import android.content.Context
 import androidx.annotation.StringRes
@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.haidev.newsapps.R
-import com.haidev.newsapps.ui.screen.sources.*
+import com.haidev.newsapps.ui.screen.sources.tab.*
 
 class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

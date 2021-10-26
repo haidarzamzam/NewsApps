@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsApps">
         <activity
+            android:name=".ui.screen.article.NewsArticleActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.screen.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -20,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.screen.news.NewsActivity"
+            android:name=".ui.screen.sources.NewsSourcesActivity"
             android:exported="true" />
     </application>
 

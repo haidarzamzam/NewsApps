@@ -1,5 +1,6 @@
-package com.haidev.newsapps.ui.screen.sources
+package com.haidev.newsapps.ui.screen.sources.tab
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.faltenreich.skeletonlayout.Skeleton
@@ -7,19 +8,20 @@ import com.faltenreich.skeletonlayout.applySkeleton
 import com.haidev.newsapps.R
 import com.haidev.newsapps.data.model.NewsSourcesModel
 import com.haidev.newsapps.data.model.Resource
-import com.haidev.newsapps.databinding.FragmentNewsHealthSourcesBinding
+import com.haidev.newsapps.databinding.FragmentNewsGeneralSourcesBinding
 import com.haidev.newsapps.ui.base.BaseFragment
+import com.haidev.newsapps.ui.screen.article.NewsArticleActivity
 import com.haidev.newsapps.util.Status
 import com.haidev.newsapps.util.invisible
 import com.haidev.newsapps.util.observeFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class NewsHealthSourcesFragment :
-    BaseFragment<FragmentNewsHealthSourcesBinding, NewsSourcesViewModel>(),
+class NewsGeneralSourcesFragment :
+    BaseFragment<FragmentNewsGeneralSourcesBinding, NewsSourcesViewModel>(),
     NewsSourcesNavigator {
 
     private val newsSourcesViewModel: NewsSourcesViewModel by viewModel()
-    private var _binding: FragmentNewsHealthSourcesBinding? = null
+    private var _binding: FragmentNewsGeneralSourcesBinding? = null
     private val binding get() = _binding
     private lateinit var newsSourcesListAdapter: ItemNewsSourcesAdapter
     private var skeletonNewsSources: Skeleton? = null
@@ -32,7 +34,7 @@ class NewsHealthSourcesFragment :
         initItemNewsSourcesAdapter()
     }
 
-    override fun setLayout() = R.layout.fragment_news_health_sources
+    override fun setLayout() = R.layout.fragment_news_general_sources
 
     override fun getViewModels() = newsSourcesViewModel
 
@@ -40,7 +42,9 @@ class NewsHealthSourcesFragment :
         binding?.rvNewsSources?.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
-            newsSourcesListAdapter = ItemNewsSourcesAdapter()
+            newsSourcesListAdapter = ItemNewsSourcesAdapter {
+                navigateToDetailSources(it)
+            }
             adapter = newsSourcesListAdapter
         }
         skeletonNewsSources =
@@ -49,7 +53,7 @@ class NewsHealthSourcesFragment :
 
     override fun onReadyAction() {
         initItemNewsSourcesAdapter()
-        newsSourcesViewModel.getNewsSourcesAsync("health")
+        newsSourcesViewModel.getNewsSourcesAsync("general")
     }
 
     override fun onObserveAction() {
@@ -61,7 +65,6 @@ class NewsHealthSourcesFragment :
 
     private fun handleNewsSources(it: Resource<NewsSourcesModel.Response>?) {
         when (it?.status) {
-
             Status.LOADING -> {
                 skeletonNewsSources?.showSkeleton()
             }
@@ -86,6 +89,8 @@ class NewsHealthSourcesFragment :
     }
 
     override fun navigateToDetailSources(data: NewsSourcesModel.Response.Source) {
-
+        val intent = Intent(activity?.applicationContext, NewsArticleActivity::class.java)
+        intent.putExtra(NewsArticleActivity.EXTRA_SOURCE, data)
+        activity?.startActivity(intent)
     }
 }

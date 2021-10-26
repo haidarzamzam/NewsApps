@@ -1,4 +1,4 @@
-package com.haidev.newsapps.ui.screen.sources
+package com.haidev.newsapps.ui.screen.sources.tab
 
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,19 +7,19 @@ import com.faltenreich.skeletonlayout.applySkeleton
 import com.haidev.newsapps.R
 import com.haidev.newsapps.data.model.NewsSourcesModel
 import com.haidev.newsapps.data.model.Resource
-import com.haidev.newsapps.databinding.FragmentNewsGeneralSourcesBinding
+import com.haidev.newsapps.databinding.FragmentNewsEntertainmentSourcesBinding
 import com.haidev.newsapps.ui.base.BaseFragment
 import com.haidev.newsapps.util.Status
 import com.haidev.newsapps.util.invisible
 import com.haidev.newsapps.util.observeFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class NewsGeneralSourcesFragment :
-    BaseFragment<FragmentNewsGeneralSourcesBinding, NewsSourcesViewModel>(),
+class NewsEntertainmentSourcesFragment :
+    BaseFragment<FragmentNewsEntertainmentSourcesBinding, NewsSourcesViewModel>(),
     NewsSourcesNavigator {
 
     private val newsSourcesViewModel: NewsSourcesViewModel by viewModel()
-    private var _binding: FragmentNewsGeneralSourcesBinding? = null
+    private var _binding: FragmentNewsEntertainmentSourcesBinding? = null
     private val binding get() = _binding
     private lateinit var newsSourcesListAdapter: ItemNewsSourcesAdapter
     private var skeletonNewsSources: Skeleton? = null
@@ -32,7 +32,7 @@ class NewsGeneralSourcesFragment :
         initItemNewsSourcesAdapter()
     }
 
-    override fun setLayout() = R.layout.fragment_news_general_sources
+    override fun setLayout() = R.layout.fragment_news_entertainment_sources
 
     override fun getViewModels() = newsSourcesViewModel
 
@@ -40,7 +40,9 @@ class NewsGeneralSourcesFragment :
         binding?.rvNewsSources?.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
-            newsSourcesListAdapter = ItemNewsSourcesAdapter()
+            newsSourcesListAdapter = ItemNewsSourcesAdapter {
+                navigateToDetailSources(it)
+            }
             adapter = newsSourcesListAdapter
         }
         skeletonNewsSources =
@@ -49,7 +51,7 @@ class NewsGeneralSourcesFragment :
 
     override fun onReadyAction() {
         initItemNewsSourcesAdapter()
-        newsSourcesViewModel.getNewsSourcesAsync("general")
+        newsSourcesViewModel.getNewsSourcesAsync("entertainment")
     }
 
     override fun onObserveAction() {

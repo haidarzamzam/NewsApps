@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.screen.sources.NewsGeneralSourcesFragment">
+        tools:context=".ui.screen.sources.tab.NewsGeneralSourcesFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_news_sources"

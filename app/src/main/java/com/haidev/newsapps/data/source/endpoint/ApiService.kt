@@ -1,5 +1,6 @@
 package com.haidev.newsapps.data.source.endpoint
 
+import com.haidev.newsapps.data.model.NewsArticleModel
 import com.haidev.newsapps.data.model.NewsSourcesModel
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
@@ -12,4 +13,11 @@ interface ApiService {
         @Query("language") language: String?,
         @Query("apiKey") api_key: String?
     ): Deferred<NewsSourcesModel.Response>
+
+    @GET("everything")
+    fun getNewsArticle(
+        @Query("sources") category: String?,
+        @Query("language") language: String?,
+        @Query("apiKey") api_key: String?
+    ): Deferred<NewsArticleModel.Response>
 }

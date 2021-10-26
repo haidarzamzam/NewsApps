@@ -1,4 +1,4 @@
-package com.haidev.newsapps.ui.screen.sources
+package com.haidev.newsapps.ui.screen.sources.tab
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.haidev.newsapps.data.model.NewsSourcesModel
 import com.haidev.newsapps.databinding.ItemNewsSourcesRowBinding
 
-class ItemNewsSourcesAdapter :
+class ItemNewsSourcesAdapter(
+    private val listener: (NewsSourcesModel.Response.Source) -> Unit
+) :
     RecyclerView.Adapter<ItemNewsSourcesAdapter.ViewHolder>() {
 
     private var list = mutableListOf<NewsSourcesModel.Response.Source>()
@@ -24,6 +26,9 @@ class ItemNewsSourcesAdapter :
             data: NewsSourcesModel.Response.Source
         ) {
             binding.item = data
+            itemView.setOnClickListener {
+                listener(data)
+            }
         }
     }
 

@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.haidev.newsapps.R
 import com.haidev.newsapps.databinding.ActivitySplashBinding
 import com.haidev.newsapps.ui.base.BaseActivity
-import com.haidev.newsapps.ui.screen.news.NewsActivity
+import com.haidev.newsapps.ui.screen.sources.NewsSourcesActivity
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
@@ -36,7 +36,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(),
     override fun onReadyAction() {}
 
     override fun navigateToNews() {
-        val intent = Intent(this@SplashActivity, NewsActivity::class.java)
+        val intent = Intent(this@SplashActivity, NewsSourcesActivity::class.java)
         startActivity(intent)
         finish()
     }

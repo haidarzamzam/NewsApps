@@ -1,4 +1,4 @@
-package com.haidev.newsapps.ui.screen.sources
+package com.haidev.newsapps.ui.screen.sources.tab
 
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,7 +40,9 @@ class NewsBusinessSourcesFragment :
         binding?.rvNewsSources?.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
-            newsSourcesListAdapter = ItemNewsSourcesAdapter()
+            newsSourcesListAdapter = ItemNewsSourcesAdapter {
+                navigateToDetailSources(it)
+            }
             adapter = newsSourcesListAdapter
         }
         skeletonNewsSources =
